@@ -23,7 +23,6 @@ Implemented in `src/agent/agent.py`:
 - Thought -> Action -> Observation loop.
 - Action parsing and dynamic tool execution.
 - Max-step guardrails.
-- Early-final and fallback-final safety logic.
 
 ### 2.2 Tool Definitions (Inventory)
 | Tool Name | Input Format | Use Case |
@@ -71,19 +70,16 @@ Comparison table (latest run):
 - **Observation**: v1 sometimes reached `max_steps` before emitting `Final Answer`.
 - **Root Cause**: planner continued collecting extra context instead of summarizing when sufficient evidence already existed.
 - **Fix Applied (v2)**:
-  - Added `AGENT_EARLY_FINAL` logic for comparison/discovery intent.
-  - Added structured fallback final answer when step limit is reached.
   - Improved loop termination behavior using observed tool outputs.
 
 Latest validation result:
 - No timeout/fallback in the latest 3-case benchmark run.
 
 ---
-
 ## 5. Ablation Studies & Experiments
 
 ### Experiment 1: Agent v1 vs Agent v2
-- **Diff**: Added early-final + fallback synthesis from observations.
+- **Diff**: Improved loop termination behavior.
 - **Result**: Latest benchmark moved from timeout/fallback risks to stable completion on all cases.
 
 ### Experiment 2: Chatbot vs Agent
@@ -98,10 +94,10 @@ Latest validation result:
 ## 6. Production Readiness Review
 
 - **Security**: Validate tool arguments before execution; reject unknown tool calls.
-- **Guardrails**: `max_steps`, parse-error logging, early-final/fallback-final.
+- **Guardrails**: `max_steps`, parse-error logging.
 - **Scaling**: Add retrieval/search APIs, async tool execution, and intent-based tool routing.
 
 ---
 
 > [!NOTE]
-> If required by instructor, include one architecture flowchart image and attach run command screenshots.
+> If required by instructor, include one architecture flowchart image and attach run command screenshots
