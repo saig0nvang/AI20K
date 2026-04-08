@@ -67,7 +67,7 @@ Khách hàng mua xe VinFast không chỉ quan tâm đến giá bán lẻ mà cò
 
 ## 7. Phân công (Mini AI spec & Task)
 
-- **An:** Tập trung viết Canvas chi tiết và liệt kê các Failure modes đầy đủ (edge cases).
-- **Bình:** Vẽ Sketch UI Flow và chi tiết User stories 4 paths cho báo cáo.
-- **Châu:** Ghi rõ số liệu Eval metrics, bộ Test cases và phân tích bảng ROI.
-- **Dũng:** Prototype research (dùng công cụ AI UI builder như v0/Cursor), setup Prompt test case cơ bản (bảng giá VF 5).
+- **Việt Anh - Linh:** Tập trung viết Canvas chi tiết và liệt kê các Failure modes đầy đủ (edge cases).
+- **Minh-Ngọc:** Vẽ Sketch UI Flow và chi tiết User stories 4 paths cho báo cáo.
+- **Trường:** Ghi rõ số liệu Eval metrics, bộ Test cases và phân tích bảng ROI.
+- **Thanh - Hoàng:** Prototype research (dùng công cụ AI UI builder như v0/Cursor), setup Prompt test case cơ bản (bảng giá VF 5).
