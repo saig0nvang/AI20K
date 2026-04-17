@@ -1,0 +1,12 @@
+# Cấu hình Railway V2 "Cưỡng chế" chuẩn Production
+[build]
+builder = "DOCKER"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Ép buộc lệnh chạy chuẩn, bỏ qua mọi entrypoint mặc định
+startCommand = "python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+numReplicas = 1
